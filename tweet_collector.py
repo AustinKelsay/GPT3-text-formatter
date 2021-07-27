@@ -4,6 +4,7 @@ import os
 TOKEN = os.getenv("TWITTER_TOKEN")
 
 headers = {'Authorization': f"Bearer {TOKEN}"}
-r = requests.get('https://api.twitter.com/2/users/by/username/naval', headers=headers)
+params = {"exclude": 'retweets'}
+r = requests.get('https://api.twitter.com/2/users/745273/tweets', headers=headers , params=params)
 
 print(r.json())
