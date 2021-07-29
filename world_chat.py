@@ -35,7 +35,7 @@ def ask(question, chat_log=None):
         chat_log = start_chat_log
     prompt = f'{chat_log}World: {question}\nAI:'
     response = completion.create(
-        prompt=prompt, model="curie:ft-user-rmthqi0lasncm4lzz0f1e9ob-2021-07-29-16-55-43", stop=['\nWorld'], temperature=0.9,
+        prompt=prompt, model="curie:ft-user-rmthqi0lasncm4lzz0f1e9ob-2021-07-29-16-55-43", stop=['\nWorld'], temperature=0.7,
         top_p=1, frequency_penalty=0, presence_penalty=0.6, best_of=1,
         max_tokens=500)
     answer = response.choices[0].text.strip()
